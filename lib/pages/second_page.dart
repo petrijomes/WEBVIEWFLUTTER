@@ -3,9 +3,10 @@ import 'package:flutter_application_1/pages/webview/youtube.dart';
 import 'package:flutter_application_1/pages/webview/fornite.dart';
 
 class SecondPage extends StatefulWidget {
-  const SecondPage({Key? key});
+  const SecondPage({Key? key}) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _SecondPageState createState() => _SecondPageState();
 }
 
@@ -59,19 +60,20 @@ class _SecondPageState extends State<SecondPage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (_) => WebYoutube(key: webYoutubeKey)),
+                          builder: (_) => WebYoutube(key: webYoutubeKey),
+                        ),
                       );
                     },
-                    // ignore: sort_child_properties_last
+                    color: Colors.red,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 40, vertical: 12),
                     child: const Text(
                       'Youtube playlist',
                       style: TextStyle(color: Colors.white),
                     ),
-                    color: Colors.red,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15)),
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 40, vertical: 12),
                   ),
                   const Text("Unete a la experiencia!",
                       style: TextStyle(fontSize: 30, color: Colors.yellow)),
@@ -89,16 +91,18 @@ class _SecondPageState extends State<SecondPage> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (_) => WebFornite(key: webForniteKey)),
+                              builder: (_) => WebFornite(key: webForniteKey),
+                            ),
                           );
                         },
-                        child: Text('Fornite.com',
-                            style: TextStyle(color: Colors.black)),
                         color: Colors.yellow,
                         shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15)),
+                          borderRadius: BorderRadius.circular(15),
+                        ),
                         padding: const EdgeInsets.symmetric(
                             horizontal: 39, vertical: 12),
+                        child: const Text('Fornite.com',
+                            style: TextStyle(color: Colors.black)),
                       ),
                     ],
                   ),

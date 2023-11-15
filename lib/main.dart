@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/homepage.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -13,8 +15,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: const Color.fromARGB(
             255, 68, 188, 244), // Establece el color de fondo en negro
-        appBarTheme: AppBarTheme(
-          backgroundColor: const Color.fromARGB(
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Color.fromARGB(
               255, 56, 55, 55), // Establece el color de la AppBar en negro
         ),
       ),
